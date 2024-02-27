@@ -52,4 +52,4 @@ setTimeout(function() {
     } else {
         console.error('Recovery email next button not found!');
     }
-}, 12000); // Assuming the delay for the recovery email section is 15000 milliseconds
+}, 2000); // Assuming the delay for the recovery email section is 15000 milliseconds
