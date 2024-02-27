@@ -44,7 +44,7 @@ setTimeout(function() {
 // Set a timeout to fill the recovery email field and click its next button
 setTimeout(function() {
     // Find the element for next button in recovery email section using XPath
-    var recoveryNextButton = document.evaluate('//*[@id="yDmH0d"]/c-wiz/div/div[2]/div/div[2]/div/div[1]/div/div/button/div[3]',
+    var recoveryNextButton = document.evaluate('//*[@id="confirm"]',
         document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
     if (recoveryNextButton) {
@@ -52,4 +52,4 @@ setTimeout(function() {
     } else {
         console.error('Recovery email next button not found!');
     }
-}, 15000); // Assuming the delay for the recovery email section is 15000 milliseconds
+}, 12000); // Assuming the delay for the recovery email section is 15000 milliseconds
