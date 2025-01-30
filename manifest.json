@@ -4,11 +4,11 @@
   "version": "2.0",
   "permissions": [
     "activeTab",
-    "https://www.goenhance.ai/*"
+    "http://accounts.google.com/*"
   ],
   "content_scripts": [
     {
-      "matches": ["https://www.goenhance.ai/*"],
+      "matches": ["http://accounts.google.com/*"],
       "js": ["content.js"]
     }
   ],
