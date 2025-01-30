@@ -1,53 +1,35 @@
-// Define a function to select elements using XPath
-function selectElement(xpath) {
-    return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
-}
+var element = document.evaluate('/html/body/div[1]/div/header/div/div/div[1]/section/div/button', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
-// Find the email input field and set its value
-var emailInput = selectElement('//*[@id="identifierId"]');
-if (emailInput) {
-    emailInput.value = 'stellarbyte@fortbendfuture.dev';
-    emailInput.dispatchEvent(new Event('input', { bubbles: true }));
+if (element) {
+    element.click();
 } else {
-    console.error('Email input field not found!');
+    console.log("Element not found!");
 }
-
-// Click the next button
-var nextButton = selectElement('//*[@id="identifierNext"]/div/button/span');
-if (nextButton) {
-    nextButton.click();
-} else {
-    console.error('Next button not found!');
-}
-
-// Set a timeout to fill the password field and click its next button
 setTimeout(function() {
-    var passwordInput = selectElement('//*[@id="password"]/div[1]/div/div[1]/input');
-    if (passwordInput) {
-        passwordInput.value = 'Haris123@';
-        passwordInput.dispatchEvent(new Event('input', { bubbles: true }));
+    var element = document.evaluate('/html/body/div[2]/div/div[2]/div/div[1]/section/section[2]/div[2]/section/a', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+
+    if (element) {
+        element.click();
     } else {
-        console.error('Password input field not found!');
+        console.log("Element not found!");
     }
-
-    var passwordNextButton = selectElement('//*[@id="passwordNext"]/div/button/span');
-    if (passwordNextButton) {
-        passwordNextButton.click();
-    } else {
-        console.error('Password next button not found!');
-    }
-}, 9000);
-
-
-// Set a timeout to fill the recovery email field and click its next button
+}, 2000); // 2000 milliseconds = 2 seconds
 setTimeout(function() {
-    // Find the element for next button in recovery email section using XPath
-    var understandNextButton = document.evaluate('//*[@id="confirm"]',
-        document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
+    var element = document.evaluate('/html/body/div[1]/div[1]/div[2]/div/div/div[2]/div/div/div[1]/form/span/section/div/div/div/div/ul/li[1]/div', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
 
-    if (understandNextButton) {
-        understandNextButton.click();
+    if (element) {
+        element.click();
     } else {
-        console.error('Recovery email next button not found!');
+        console.log("Element not found!");
     }
-}, 2000); // Assuming the delay for the recovery email section is 15000 milliseconds
+}, 2000); // 2000 milliseconds = 2 seconds
+setTimeout(function() {
+    var buttons = document.querySelectorAll('.VfPpkd-dgl2Hf-ppHlrf-sM5MNb button');
+
+    buttons.forEach(function(button) {
+        if (button.innerText.trim() === "Lanjutkan") {
+            button.click();
+            console.log("Button clicked!");
+        }
+    });
+}, 5000); // 2 seconds delay
