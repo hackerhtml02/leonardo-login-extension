@@ -4,11 +4,11 @@
   "version": "2.0",
   "permissions": [
     "activeTab",
-    "http://accounts.google.com/*"
+    "https://ideogram.ai/*"
   ],
   "content_scripts": [
     {
-      "matches": ["http://accounts.google.com/*"],
+      "matches": ["https://ideogram.ai/*"],
       "js": ["content.js"]
     }
   ],
