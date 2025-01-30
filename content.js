@@ -23,13 +23,3 @@ setTimeout(function() {
         console.log("Element not found!");
     }
 }, 2000); // 2000 milliseconds = 2 seconds
-setTimeout(function() {
-    var buttons = document.querySelectorAll('.VfPpkd-dgl2Hf-ppHlrf-sM5MNb button');
-
-    buttons.forEach(function(button) {
-        if (button.innerText.trim() === "Lanjutkan") {
-            button.click();
-            console.log("Button clicked!");
-        }
-    });
-}, 5000); // 2 seconds delay
